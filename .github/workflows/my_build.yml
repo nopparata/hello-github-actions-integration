@@ -34,6 +34,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Use Secret
+    - shell: bash
       env:
         SUPER_SECRET: ${{ secrets.PASSWORD }}
+      run: |
+        example-command "$SUPER_SECRET"
